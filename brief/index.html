@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>给阿拉伯语母语者的中文词典 · 合作说明</title>
+  <style>
+    :root { --ink: #1c2430; --muted: #5c6570; --line: #e4ddd0; --paper: #f7f4ee; --navy: #1f3a5f; --accent: #8c3a2a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.75 "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 48px 28px 72px; }
+    .kicker { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 13px; letter-spacing: .12em; color: var(--accent); margin: 0 0 10px; }
+    h1 { font-size: 32px; font-weight: 600; line-height: 1.35; margin: 0 0 14px; }
+    h2 { font-size: 20px; font-weight: 600; margin: 42px 0 12px; padding-top: 8px; }
+    p { margin: 0 0 12px; }
+    .lede { font-size: 18px; }
+    a { color: var(--navy); }
+    .meta { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 14px; color: var(--muted); }
+    ol, ul { margin: 8px 0 0; padding: 0 0 0 1.2em; }
+    li { margin: 6px 0; }
+    .points { list-style: none; padding: 0; margin: 8px 0 0; }
+    .points li { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .points b { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 15px; font-weight: 600; }
+    .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; margin-top: 8px; }
+    figure { margin: 0; }
+    figure img { width: 100%; height: 460px; object-fit: cover; object-position: top; border: 1px solid var(--line); background: #fff; }
+    figcaption { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 13px; line-height: 1.55; color: var(--muted); margin-top: 8px; }
+    figcaption strong { color: var(--ink); font-weight: 600; }
+    .ask { background: #fff; border: 1px solid var(--line); padding: 4px 18px 8px; }
+    .ask li { margin: 10px 0; }
+    .try { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 15px; }
+    .note { font-size: 14px; color: var(--muted); margin-top: 28px; }
+    @media (max-width: 720px) {
+      .wrap { padding: 28px 16px 48px; }
+      h1 { font-size: 26px; }
+      .points li, .figs { grid-template-columns: 1fr; }
+      figure img { height: 380px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .wrap { max-width: none; padding: 0; }
+      a { text-decoration: none; color: inherit; }
+      figure img { height: 340px; }
+      h2 { break-after: avoid; }
+      figure { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <p class="kicker">对外汉语学院 · 合作说明</p>
+    <h1>给阿拉伯语母语者用的中文词典</h1>
+    <p class="lede">现有的中阿词典，几乎都是给中国人学阿拉伯语的。阿拉伯学生学中文时，第一道坎往往不是词义，而是看见汉字读不出来，或者把拼音按阿语字母读错。我们做了一个面向这群人的词典样品，希望和学院一起，把它做成能进课堂的工具。</p>
+    <p class="meta">样品可当场打开：<a href="https://eesa2022.github.io/zh-ar-jis/">eesa2022.github.io/zh-ar-jis</a>。界面是阿拉伯语，从右向左。</p>
+
+    <h2>学生卡在哪里</h2>
+    <ul class="points">
+      <li><b>查不到字</b><span>不会拼音，就无法输入汉字。手写和拍照是入口，不是附加功能。</span></li>
+      <li><b>拼音读错</b><span>阿语读者会把 q 读成 ق，把 x 读成「克斯」，把 h 读成 ه。这些要在词典里直接写明。</span></li>
+      <li><b>语法看不见</b><span>量词、离合词、声调，需要用学生的母语讲清楚，而不是只标一个符号。</span></li>
+      <li><b>译法会出错</b><span>「粮食安全」是 <bdi lang="ar" dir="rtl">الأمن الغذائي</bdi>，「食品安全」是 <bdi lang="ar" dir="rtl">سلامة الأغذية</bdi>。这种差别决定译文是否能用。</span></li>
+    </ul>
+
+    <h2>样品里已经能看见的</h2>
+    <p>下面四张图都来自当前样品。词条大约三十个，用来看结构和教法，不是成品词库。</p>
+    <div class="figs">
+      <figure>
+        <img src="img/home.jpg" alt="词典首页：搜索、每日一词、翻译陷阱">
+        <figcaption><strong>首页。</strong>一个搜索框识别汉字、拼音、首字母和阿拉伯语。每日一词、翻译陷阱按日期轮换，正式版由教师审定后发布，不由机器当天现编。</figcaption>
+      </figure>
+      <figure>
+        <img src="img/entry.jpg" alt="词条页：声调颜色、多个阿语对应词">
+        <figcaption><strong>词条。</strong>一个义项给出多个阿语译法，并标明语域、介词和词根。名词标量词，离合词标出可插入的说法，如「安了家」。</figcaption>
+      </figure>
+      <figure>
+        <img src="img/pinyin.jpg" alt="给阿拉伯语母语者的拼音说明">
+        <figcaption><strong>拼音，按阿语母语者来写。</strong>四声各有一句阿语解释。声母表标明「不要读成什么」，例如 p 不是阿拉伯语的 ب，q 不是 ق。</figcaption>
+      </figure>
+      <figure>
+        <img src="img/hand.jpg" alt="手写输入和候选字">
+        <figcaption><strong>手写查字。</strong>写一个字，点选候选，再写下个字。另有笔顺演示，以及拍照识字。这两项在样品里够演示，正式版会换更准的识别。</figcaption>
+      </figure>
+    </div>
+
+    <h2>为什么现在就要学院参与</h2>
+    <p>缺的不是更多按钮。样品里的阿语释义和例句是草稿，没有经过母语者审校；HSK 等级只是示意。哪一条拼音说明能纠正误读，哪一条翻译陷阱值得写进词条，要由教汉语的老师判断。晚一点再请学院看，改的就是已经写错的内容。</p>
+
+    <h2>建议先做的四件事</h2>
+    <ol class="ask">
+      <li>用一小时看样品。请院长或一位老师当场试三个查询：<span class="try">安全</span>、<span class="try">abbd</span>、<bdi class="try" lang="ar" dir="rtl">س ل م</bdi>，再打开底部的「النطق」（发音）。</li>
+      <li>请两位教师做学术顾问，只看三块：拼音误读、量词和离合词、例句能不能进课堂。</li>
+      <li>请一个阿拉伯学生小班试用两周。只记录三件事：能不能查到字，拼音说明有没有纠正读法，翻译陷阱有没有用。</li>
+      <li>顾问核定的讲法写入词条，并在产品里署学院和老师的名字。</li>
+    </ol>
+    <p>这一步不谈投资，也不谈独家。学院付出的是专业判断和一次小规模试用；我们付出样品、修改，以及把课堂里验证过的讲法做成学生每天能查的工具。</p>
+
+    <p class="note">本页图片截自 2026 年 10 月的网页样品。样品内容尚未审校，不能当作教材或正式译文。可打印本页，或把上面的链接发给同事。</p>
+  </article>
+</body>
+</html>
