@@ -2,4 +2,6 @@ Stroke-order JSON files in `vendor/strokes/` are from hanzi-writer-data, which r
 
 hanzi-writer (vendor/hanzi-writer.min.js) is Copyright David Chanin and licensed under the MIT License.
 
+Printed-text recognition in the demo uses tesseract.js (vendor/tesseract.min.js), Apache License 2.0. The Chinese model is downloaded on first use from the tesseract.js language-data CDN.
+
 Handwriting recognition uses HanziLookupJS (vendor/hanzilookup.min.js), Copyright Gabor L. Ugray, licensed under the GNU GPL. See vendor/HANZILOOKUP-GPL.txt. The character data vendor/mmah.json is derived from Make Me a Hanzi and is covered by the Arphic Public License.

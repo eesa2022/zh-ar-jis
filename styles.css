@@ -209,6 +209,11 @@ h4 { font-size: 14px; color: var(--muted); margin: 14px 0 6px; }
 .hw-cands { display: flex; gap: 6px; overflow-x: auto; min-height: 54px; margin-top: 8px; padding-bottom: 2px; }
 .hw-cand { flex: none; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); font-size: 28px; line-height: 1; }
 .hw-cand:hover, .hw-cand:active { border-color: var(--brand); background: #fff; }
+#cam-video, #cam-preview { width: 100%; max-height: 200px; object-fit: cover; border-radius: 12px; background: #111; display: block; }
+#cam-video[hidden], #cam-preview[hidden] { display: none; }
+.cam-result { min-height: 48px; margin-top: 8px; text-align: left; line-height: 1.4; }
+.cam-char { width: 36px; height: 36px; margin: 2px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); font-size: 20px; }
+.cam-other { color: var(--muted); }
 .stroke-box { width: 240px; height: 240px; margin: 6px auto; border: 1px solid var(--line); border-radius: 12px;
   background-image: linear-gradient(to right, transparent 49.5%, #eee 49.5%, #eee 50.5%, transparent 50.5%), linear-gradient(to bottom, transparent 49.5%, #eee 49.5%, #eee 50.5%, transparent 50.5%); display: grid; place-items: center; }
 .toast { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(29,39,51,.92); color: #fff; padding: 6px 16px; border-radius: 99px; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 20; max-width: 90%; }

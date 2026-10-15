@@ -59,6 +59,22 @@
       <p class="hint" id="hw-status">ارسم حرفًا، ثم اضغط الاقتراح لإضافته.</p>
     </div></div>
 
+    <div id="cam" class="modal"><div class="modal-card hw-card">
+      <div class="modal-head"><div>البحث بالكاميرا</div><button class="icon" data-action="close-cam">✕</button></div>
+      <div id="cam-composed" class="hw-composed zh" dir="ltr" lang="zh-CN"></div>
+      <video id="cam-video" playsinline autoplay muted></video>
+      <img id="cam-preview" alt="" hidden>
+      <div id="cam-result" class="cam-result" dir="ltr" lang="zh-CN"></div>
+      <div class="row-btns">
+        <button class="btn" id="cam-shot" data-action="cam-shot" hidden>التقاط</button>
+        <button class="btn ghost" data-action="cam-file">صورة</button>
+        <button class="btn ghost" data-action="cam-undo">تراجع</button>
+        <button class="btn" data-action="cam-search">ابحث</button>
+      </div>
+      <input id="cam-file" type="file" accept="image/*" hidden>
+      <p class="hint" id="cam-status"></p>
+    </div></div>
+
     <div id="stroke" class="modal"><div class="modal-card">
       <div class="modal-head"><div id="stroke-title"></div><button class="icon" data-action="close-stroke">✕</button></div>
       <div id="stroke-box" class="stroke-box" dir="ltr"></div>
@@ -70,7 +86,9 @@
 
   <script src="vendor/hanzi-writer.min.js"></script>
   <script src="vendor/hanzilookup.min.js"></script>
+  <script src="vendor/tesseract.min.js"></script>
   <script src="js/handwrite.js"></script>
+  <script src="js/camera.js"></script>
   <script src="data/core.js"></script>
   <script src="data/packs.js"></script>
   <script src="js/labels.js"></script>

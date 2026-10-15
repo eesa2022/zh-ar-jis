@@ -425,6 +425,7 @@
     if (d.say) { speak(d.say); return; }
     if (d.char) { openStroke(d.char); return; }
     if (d.hwChar) { HW.pick(d.hwChar); return; }
+    if (d.camChar) { CAM.pick(d.camChar); return; }
     if (d.copy) { try { await navigator.clipboard.writeText(d.copy); toast("نُسخ: " + d.copy); } catch { toast(d.copy); } return; }
     if (d.project) { state.vault.current = d.project; save("zhar.vault", state.vault); render(); return; }
     switch (d.action) {
@@ -444,12 +445,12 @@
       case "hw-undo": HW.undo(); break;
       case "hw-clear": HW.clearStroke(); break;
       case "hw-search": HW.search(); break;
-      case "camera":
-        $("#sheet-body").innerHTML = `<h3 class="sheet-title">📷 البحث بالكاميرا</h3>
-          <p>وجّه الكاميرا إلى نص صيني أو اختر صورة، ثم اضغط على أي كلمة لمعرفة معناها. هذه الخاصية مخططة للإصدار الثاني.</p>
-          <p class="hint">غير متوفرة في هذا النموذج التجريبي على الويب.</p>`;
-        $("#sheet").classList.add("open");
-        break;
+      case "camera": CAM.open(); break;
+      case "close-cam": CAM.close(); break;
+      case "cam-shot": CAM.capture(); break;
+      case "cam-file": $("#cam-file").click(); break;
+      case "cam-undo": CAM.backspace(); break;
+      case "cam-search": CAM.search(); break;
       case "paste":
         try { const txt = (await navigator.clipboard.readText()).trim(); if (txt) setQuery(txt.slice(0, 40)); else toast("الحافظة فارغة"); }
         catch { toast("لم يُسمح بقراءة الحافظة"); }
@@ -485,6 +486,8 @@
   $("#q").placeholder = HINTS[0];
 
   HW.onSearch = (text) => { if (text) setQuery(text); else toast("اكتب حرفًا أولًا"); };
+  CAM.onSearch = (text) => { if (text) setQuery(text); else toast("اختر حروفًا من نتيجة التعرف أولًا"); };
+  $("#cam-file").addEventListener("change", (ev) => { const f = ev.target.files && ev.target.files[0]; ev.target.value = ""; if (f) CAM.fromFile(f); });
   rebuild(); render();
   window.__app = { state, LEX };
 })();
