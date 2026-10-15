@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>جسر · 桥 — معجم صيني عربي (نموذج تجريبي)</title>
+  <meta name="theme-color" content="#1f3a5f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="جسر">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="phone">
+    <header class="appbar">
+      <div class="brand"><span class="logo zh" lang="zh-CN">桥</span><span><b>جِسْر</b><small>معجم صيني ↔ عربي</small></span></div>
+      <span class="proto">نموذج تجريبي</span>
+    </header>
+
+    <div id="searchbar" class="searchbar">
+      <div class="search-field">
+        <span class="s-ic">⌕</span>
+        <input id="q" type="search" dir="auto" autocomplete="off" spellcheck="false" placeholder="">
+        <button class="icon tiny" data-action="clear" title="مسح">✕</button>
+      </div>
+      <div class="modes">
+        <button data-action="handwrite"><span>✍</span>بخط اليد</button>
+        <button data-action="camera"><span>📷</span>الكاميرا</button>
+        <button data-action="paste"><span>📋</span>لصق</button>
+        <button data-action="tips"><span>؟</span>طرق البحث</button>
+      </div>
+    </div>
+
+    <main id="main"></main>
+
+    <nav class="nav">
+      <button data-nav="search"><span>⌕</span>بحث</button>
+      <button data-nav="vault"><span>★</span>المجلد</button>
+      <button data-nav="guide"><span>ā</span>النطق</button>
+      <button data-nav="settings"><span>⚙</span>الإعدادات</button>
+    </nav>
+
+    <div id="sheet" class="sheet"><div class="sheet-card"><button class="icon close" data-action="close-sheet">✕</button><div id="sheet-body"></div></div></div>
+
+    <div id="stroke" class="modal"><div class="modal-card">
+      <div class="modal-head"><div id="stroke-title"></div><button class="icon" data-action="close-stroke">✕</button></div>
+      <div id="stroke-box" class="stroke-box" dir="ltr"></div>
+      <div class="row-btns"><button class="btn" data-action="stroke-replay">إعادة العرض</button><button class="btn ghost" data-action="stroke-quiz">تدرّب على الكتابة</button></div>
+    </div></div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="vendor/hanzi-writer.min.js"></script>
+  <script src="data/core.js"></script>
+  <script src="data/packs.js"></script>
+  <script src="js/labels.js"></script>
+  <script src="js/pinyin.js"></script>
+  <script src="js/arabic.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
