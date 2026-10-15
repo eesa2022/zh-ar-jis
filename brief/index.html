@@ -3,209 +3,388 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>给阿拉伯语母语者的中文词典 · 合作说明</title>
+  <title>面向阿拉伯语母语者的汉语词典 · 合作说明</title>
   <style>
-    :root { --ink: #1c2430; --muted: #5c6570; --line: #e4ddd0; --paper: #f7f4ee; --navy: #1f3a5f; --accent: #8c3a2a; }
+    :root { --ink: #1c2430; --muted: #5c6570; --line: #e2dacb; --paper: #f7f4ee; --card: #fff; --navy: #1f3a5f; --accent: #8c3a2a; --green: #3f7a4a; --soft: #efe9de; }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.75 "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif; }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 48px 28px 80px; }
-    .kicker { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 13px; letter-spacing: .12em; color: var(--accent); margin: 0 0 10px; }
-    h1 { font-size: 32px; font-weight: 600; line-height: 1.35; margin: 0 0 14px; }
-    h2 { font-size: 22px; font-weight: 600; margin: 48px 0 12px; }
-    h3 { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 16px; font-weight: 600; margin: 22px 0 8px; }
-    p { margin: 0 0 12px; }
-    .lede { font-size: 18px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.8 "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 56px 28px 88px; }
+    .sans, h3, table, figcaption, .meta, .label, .kicker, .callout, .steps, .diagram { font-family: "PingFang SC", "Noto Sans SC", "Source Han Sans SC", sans-serif; }
+    .kicker { font-size: 13px; letter-spacing: .14em; color: var(--accent); margin: 0 0 12px; }
+    h1 { font-size: 34px; font-weight: 600; line-height: 1.35; margin: 0 0 10px; }
+    .sub { font-size: 19px; color: var(--muted); margin: 0 0 22px; }
+    h2 { font-size: 23px; font-weight: 600; margin: 60px 0 14px; padding-top: 16px; border-top: 2px solid var(--ink); }
+    h2 .no { color: var(--accent); margin-left: 4px; margin-right: 10px; }
+    h3 { font-size: 17px; font-weight: 600; margin: 30px 0 8px; }
+    p { margin: 0 0 14px; }
     a { color: var(--navy); }
-    .meta { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 14px; color: var(--muted); }
-    .sans { font-family: "PingFang SC", "Noto Sans SC", sans-serif; }
-    .table-wrap { overflow-x: auto; margin: 12px 0 4px; }
-    table { width: 100%; min-width: 760px; border-collapse: collapse; background: #fff; font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 13.5px; line-height: 1.55; }
-    th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
-    th { background: #efeae1; font-weight: 600; }
-    th:first-child { white-space: nowrap; }
-    td.now { background: #f4f7f2; }
-    .points { list-style: none; padding: 0; margin: 8px 0 0; }
-    .points li { display: grid; grid-template-columns: 8.5em 1fr; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
-    .points b { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 15px; }
-    .net { background: #fff; border: 1px solid var(--line); padding: 16px 18px 8px; font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 15px; line-height: 1.7; }
-    .net p { margin: 0 0 10px; }
-    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px; }
-    .node { border: 1px solid var(--line); background: #f7f4ee; padding: 2px 10px; }
-    .node.core { background: var(--navy); color: #fff; border-color: var(--navy); }
-    .arrow { color: var(--muted); }
-    .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; margin-top: 14px; }
+    bdi[lang="ar"] { font-family: "Noto Naskh Arabic", "Geeza Pro", "Arial", serif; font-size: 1.05em; }
+    .meta { font-size: 14px; color: var(--muted); }
+    .summary { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--navy); padding: 22px 26px 12px; margin: 26px 0 0; }
+    .summary h3 { margin-top: 0; }
+    .summary ol { margin: 6px 0 12px; padding-right: 0; padding-left: 1.3em; }
+    .summary li { margin: 8px 0; }
+    .callout { background: var(--soft); border-left: 4px solid var(--accent); padding: 14px 18px; font-size: 15px; line-height: 1.75; margin: 18px 0; }
+    .callout b { color: var(--accent); }
+    .table-wrap { overflow-x: auto; margin: 14px 0 8px; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 13.5px; line-height: 1.6; }
+    th, td { border: 1px solid var(--line); padding: 9px 11px; text-align: left; vertical-align: top; }
+    thead th { background: var(--soft); font-weight: 600; }
+    tbody th { font-weight: 600; white-space: nowrap; background: #faf8f3; }
+    tr.ours td, tr.ours th { background: #eef3ec; }
+    table.wide { min-width: 780px; }
+    .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 20px; margin: 18px 0 8px; }
+    .figs.three { grid-template-columns: 1fr 1fr 1fr; }
     figure { margin: 0; }
-    figure img { width: 100%; height: 520px; object-fit: cover; object-position: top; border: 1px solid var(--line); background: #fff; }
-    figure.mid img { object-position: center 36%; }
-    figure.low img { object-position: center 78%; }
-    figcaption { font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 13px; line-height: 1.55; color: var(--muted); margin-top: 8px; }
+    figure img { display: block; width: 100%; height: 470px; object-fit: cover; object-position: top; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+    figure img.auto { height: auto; }
+    figcaption { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 9px; }
     figcaption strong { color: var(--ink); font-weight: 600; }
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px; margin: 8px 0 0; padding: 0; list-style: none; font-family: "PingFang SC", "Noto Sans SC", sans-serif; font-size: 15px; }
-    .two li { padding: 8px 0; border-top: 1px solid var(--line); }
-    .two b { display: block; font-size: 14px; }
-    .ask { background: #fff; border: 1px solid var(--line); padding: 4px 18px 8px; }
-    .ask li { margin: 10px 0; }
-    .try { font-family: "PingFang SC", "Noto Sans SC", sans-serif; }
-    .note { font-size: 14px; color: var(--muted); margin-top: 28px; }
-    @media (max-width: 720px) {
-      .wrap { padding: 28px 16px 48px; }
-      h1 { font-size: 26px; }
-      .points li, .figs, .two { grid-template-columns: 1fr; }
-      figure img { height: 360px; }
-      table { font-size: 12.5px; }
+    .diagram { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 18px; margin: 18px 0 6px; font-size: 14px; }
+    .compare { display: grid; grid-template-columns: 1fr 1.7fr; gap: 18px; align-items: start; }
+    .plain { border: 1px dashed #c9bfae; border-radius: 6px; padding: 14px 16px; background: #fbfaf7; }
+    .plain .line { font-size: 22px; font-family: "Songti SC", serif; margin: 6px 0 2px; }
+    .layers { display: grid; gap: 6px; }
+    .layer { display: grid; grid-template-columns: 6.6em 1fr; gap: 10px; padding: 7px 10px; border-radius: 4px; background: #f6f3ec; line-height: 1.6; }
+    .layer b { color: var(--navy); font-weight: 600; }
+    .layer.trap { background: #f8ebe7; } .layer.trap b { color: var(--accent); }
+    .layer.pack { background: #ebf2ea; } .layer.pack b { color: var(--green); }
+    .flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+    .flow .step { flex: 1 1 140px; background: #f6f3ec; border-radius: 6px; padding: 10px 12px; line-height: 1.55; }
+    .flow .step b { display: block; color: var(--navy); margin-bottom: 2px; }
+    .flow .arrow { align-self: center; color: var(--muted); }
+    .speeds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+    .speed { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; line-height: 1.6; }
+    .speed .t { font-size: 12px; color: var(--muted); }
+    .speed b { display: block; font-size: 15px; }
+    svg text { font-family: "PingFang SC", "Noto Sans SC", sans-serif; }
+    .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+    .legend i { display: inline-block; width: 22px; height: 0; border-top: 2px solid; vertical-align: middle; margin-left: 6px; }
+    .steps { counter-reset: s; list-style: none; padding: 0; margin: 12px 0; }
+    .steps li { counter-increment: s; position: relative; padding: 12px 14px 12px 50px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; margin: 8px 0; font-size: 15px; line-height: 1.7; }
+    .steps li::before { content: counter(s); position: absolute; left: 14px; top: 12px; width: 24px; height: 24px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 13px; text-align: center; line-height: 24px; }
+    code, .try { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .92em; background: #efe9de; padding: 1px 5px; border-radius: 3px; }
+    .note { font-size: 13.5px; color: var(--muted); margin-top: 40px; border-top: 1px solid var(--line); padding-top: 14px; line-height: 1.7; }
+    @media (max-width: 760px) {
+      .wrap { padding: 30px 16px 56px; }
+      h1 { font-size: 27px; }
+      .figs, .figs.three, .compare, .speeds { grid-template-columns: 1fr; }
+      figure img { height: 420px; }
     }
     @media print {
-      body { background: #fff; }
+      body { background: #fff; font-size: 15px; }
       .wrap { max-width: none; padding: 0; }
-      a { text-decoration: none; color: inherit; }
-      figure, table, .net { break-inside: avoid; }
-      h2 { break-after: avoid; }
+      a { color: inherit; text-decoration: none; }
+      h2 { break-before: auto; break-after: avoid; }
+      figure, table, .diagram, .summary, .callout, .steps li { break-inside: avoid; }
+      figure img { height: 360px; }
     }
   </style>
 </head>
 <body>
-  <article class="wrap">
-    <p class="kicker">对外汉语学院 · 合作说明</p>
-    <h1>给阿拉伯语母语者用的中文词典</h1>
-    <p class="lede">要做的不是又一个搜索框。学生和译者真正缺的，是一套能长大的中阿数据：词条够用，新词进得来，一个词能带出一串相关的词。查询要顺手，是因为数据已经按这个方式组织好了。</p>
-    <p class="meta">样品可当场打开：<a href="https://eesa2022.github.io/zh-ar-jis/">eesa2022.github.io/zh-ar-jis</a>。界面是阿拉伯语，从右向左。目前约三十个词，用来看数据怎么组织、怎么查、以后怎么加，不是成品词库。</p>
+<article class="wrap">
 
-    <h2>已有的工具为什么不够</h2>
-    <p>没有一个产品同时做到三件事：阿语母语者能直接用，数据稳定而且能更新，词和词之间可以顺着走。现在常见的是下面四类。</p>
-    <div class="table-wrap"><table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>纸质《汉阿词典》</th>
-          <th>Pleco 等中英学习词典</th>
-          <th>翻译软件、对话模型</th>
-          <th>这套词典要做成的</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>给谁用</th>
-          <td>主要服务中文使用者查阿语</td>
-          <td>以英语为桥梁学中文</td>
-          <td>要的是一句译文</td>
-          <td class="now">阿语母语者学中文、用中文</td>
-        </tr>
-        <tr>
-          <th>数据</th>
-          <td>义项和译法有权威性，一次编成</td>
-          <td>英文义项、字词网络很全，没有阿语专业译法</td>
-          <td>没有稳定词条，问两次可能两个说法</td>
-          <td class="now">义项、多种阿语译法、语域、搭配、例句，并且分得出哪条审过</td>
-        </tr>
-        <tr>
-          <th>更新</th>
-          <td>再版才变。「大模型」「光伏」这一类词不在书里</td>
-          <td>词典包可以更新，更新的是英汉</td>
-          <td>不能指定「这一条从今天起改成审定译法」</td>
-          <td class="now">按词条、按专业包发布。新词不必等整本再版</td>
-        </tr>
-        <tr>
-          <th>词与词</th>
-          <td>纸面上的参见，不能点</td>
-          <td>字、词、例句可以点，但是点到英语</td>
-          <td>没有结构，不能从「安全」走到「安全带」</td>
-          <td class="now">字、词族、搭配、另见、阿语词根，互相能打开</td>
-        </tr>
-        <tr>
-          <th>查询</th>
-          <td>按拼音翻页。汉字在书里是倒排的</td>
-          <td>汉字、拼音、手写、拍照都成熟</td>
-          <td>打一句话，或拍一张图</td>
-          <td class="now">同一条检索覆盖汉字、拼音、阿语和词根；手写、拍照用于不会拼音的时候</td>
-        </tr>
-      </tbody>
-    </table></div>
-    <p class="meta">另外一类是阿汉词典和阿语学习软件，对象是中国人学阿拉伯语，方向是反的。阿拉伯学生现在的实际路径，常常是 Pleco 查到英语，再用翻译软件转成阿语，专业译法和搭配在这一步丢失。</p>
+  <p class="kicker">合作说明 · 呈对外汉语学院</p>
+  <h1>面向阿拉伯语母语者的汉语词典</h1>
+  <p class="sub">核心是一套可以持续生长、可以审定、可以进入课堂的中阿词汇数据</p>
+  <p class="meta">可在手机上直接打开的样品：<a href="https://eesa2022.github.io/zh-ar-jis/">eesa2022.github.io/zh-ar-jis</a>（阿拉伯语界面，从右向左）。本说明中的截图均来自这个样品。</p>
 
-    <h2>一、数据本身的价值</h2>
-    <p>词典的价值不在界面换了一套颜色，而在每一条数据都能被单独使用、单独更新，并且能指向别的条。</p>
-
-    <h3>丰富：一个词不是一行对译</h3>
-    <ul class="points">
-      <li><b>多个译法</b><span>「安全」同时给 أمن、سلامة、أمان，并写明各用在国家安全、食品安全还是「感到安全」。译者需要的是选择，不是一个看起来唯一的答案。</span></li>
-      <li><b>语域和语法</b><span>书面还是口语，是否音译术语，动词后面接什么介词，名词配哪个量词，离合词能不能拆开说。这些在纸质汉阿词典里大多没有。</span></li>
-      <li><b>例句和陷阱</b><span>例句按义项分开，并标明是外交说法还是日常说法。「矮 / 低 / 短」这类易混词单独写成辨析，供词汇课直接用。</span></li>
-      <li><b>专业层</b><span>通用词在主词库。外交话语、人工智能、伊斯兰金融、能源工程分属扩展包，可以只打开学生正在学的那一包。</span></li>
-    </ul>
-
-    <h3>能更新：新词按条进来，不必重印</h3>
-    <p>纸质词典的日期停在出版那一年。这套数据的每一条都有自己的版本：可以只改「大模型」的阿语译法，可以只给「安全」追加一个外交义项，也可以整包替换「能源」词库。已经审过的句子不会因为旁边加了一个新词就被冲掉。正式使用时，未审定的内容不进入发布包。</p>
-    <p>所以「实时」不是新闻推送，而是词库活着：课堂里刚确定的译法，下一次更新就能查到，不用等五年后的再版。</p>
-
-    <h3>词与词能往外走</h3>
-    <p>学生查到一个词，应该能顺着关系走到下一个，而不是查完就断。样品里「安」已经连成下面这张网。正式词库是同一张网，只是大得多。</p>
-    <div class="net">
-      <div class="row"><span class="node">安</span><span class="arrow">字头带出</span><span class="node core">安全</span><span class="arrow">词族</span><span class="node">安全带</span><span class="node">安全阀</span><span class="node">安全感</span><span class="node">安全系数</span></div>
-      <div class="row"><span class="node core">安全</span><span class="arrow">搭配，可单独查</span><span class="node">粮食安全</span><span class="node">食品安全</span><span class="node">国家安全</span></div>
-      <div class="row"><span class="node">安</span><span class="arrow">同字头的其他词</span><span class="node">安排</span><span class="node">安家（可说「安了家」）</span><span class="node">安拉</span></div>
-      <p>从阿语也能走回来。查 <bdi lang="ar" dir="rtl">أمن</bdi>，会同时落到「安全」和「安理会」。查 <bdi lang="ar" dir="rtl">الأمن الغذائي</bdi>，直接打开搭配「粮食安全」，而不是只打开「安全」再让人自己找。</p>
-    </div>
-    <div class="figs">
-      <figure class="mid">
-        <img src="img/entry.jpg" alt="安全的词条：多个阿语译法">
-        <figcaption><strong>一个义项里的多个译法。</strong>每个译法可以点开词根继续查。这是数据，不是排版。</figcaption>
-      </figure>
-      <figure class="low">
-        <img src="img/home.jpg" alt="首页上的每日一词和翻译陷阱">
-        <figcaption><strong>翻译陷阱是数据里的一种关系。</strong>它把「矮、低、短」分清。每日一词和陷阱都按日期从已有词条里取出，正式版由教师审定后排期，不由机器当天现写。</figcaption>
-      </figure>
-    </div>
-
-    <h2>二、查询要覆盖学生真实的起点</h2>
-    <p>阿语母语者开始查一个词时，手里的线索不一样：有的是汉字，有的是听到的声音，有的是阿语词，有的是一张照片。搜索框不切换语言，看输入本身决定查法。下面八种都在样品里。</p>
-    <ul class="two">
-      <li><b>汉字</b>简体、繁体都查。完全一致优先，也查得到以它开头、或包含它的词。</li>
-      <li><b>拼音，不标调</b><span class="try">anquan</span> 即「安全」。空格可省略。</li>
-      <li><b>拼音首字母</b><span class="try">aq</span> 是「安全」，<span class="try">abbd</span> 是「按兵不动」。适合记得声音、写不全拼音的时候。</li>
-      <li><b>拼音，标调</b>带声调符号，或写成 <span class="try">an1quan2</span>。用来区分同形不同音。</li>
-      <li><b>通配</b><span class="try">安*</span> 列出「安」字起头的词，<span class="try">an*</span> 按拼音前缀列。</li>
-      <li><b>阿拉伯语</b>有无元音符号都可以，<span class="try">ة</span> 写成 <span class="try">ه</span>、冠词 <span class="try">ال</span> 都不会查丢。</li>
-      <li><b>阿语词根</b><bdi lang="ar" dir="rtl">س ل م</bdi> 按词根找，不要求用户会写完整词形。</li>
-      <li><b>阿语短语</b><bdi lang="ar" dir="rtl">الأمن الغذائي</bdi> 命中的是「粮食安全」这条搭配，不是笼统的「安全」。</li>
-    </ul>
-    <h3>不会输入时的三条路</h3>
-    <ul class="points">
-      <li><b>手写</b><span>一个字一个字写，点候选，再搜索。给完全不会拼音的学生。</span></li>
-      <li><b>拍照</b><span>对着一行印刷体中文，或从相册选图，点选认出来的字再查。</span></li>
-      <li><b>从词里继续查</b><span>例句、搭配、词族、「另见」都可以点开。查词可以变成一条阅读路径。剪贴板里已有的汉字或阿语，也可以直接贴进来查。</span></li>
-    </ul>
-    <p>手写和拍照在样品里够演示，正式版换成手机上更准的识别，查询方式不变。拼音页用阿语写明四声，并标明 q 不是 ق、h 不是 ه。这是给阿语母语者的输入法说明，中英词典不会写。</p>
-    <div class="figs">
-      <figure>
-        <img src="img/pinyin.jpg" alt="用阿拉伯语解释拼音和声调">
-        <figcaption><strong>拼音按阿语母语者来写。</strong>声母表里直接写「不要读成什么」。</figcaption>
-      </figure>
-      <figure>
-        <img src="img/hand.jpg" alt="手写一个汉字并给出候选">
-        <figcaption><strong>手写。</strong>候选来自约九千字的字库。学生点中以后，这个字进入检索，再和上面八种查法汇合。</figcaption>
-      </figure>
-    </div>
-
-    <h2>三、以后可以往哪里长</h2>
-    <p>结构先固定，内容再往上加。新的东西是挂上去的，不推倒已有词条。</p>
-    <ul class="points">
-      <li><b>专业包</b><span>外交、能源、金融、技术已经分成独立的包。以后可以加医学、法律、新闻、工程，由懂该领域的人维护，不影响主词库。</span></li>
-      <li><b>教学层</b><span>HSK 等级、易错说明、某一门课的词表，可以作为一层挂在同一个词上。学院维护这一层，核心译法仍由审定流程管。学生看到的是一本词典，背后是两套可以分开更新的数据。</span></li>
-      <li><b>使用层</b><span>术语夹已经能按翻译或课程项目分组，并导出表格。下一步是整段课文点查、错词复习。这些都读同一套词条，不必另做一本教材词典。</span></li>
-      <li><b>审定</b><span>每一条带来源和审核状态。教师改过的译法留下名字。未通过的草稿不会进学生使用的包。</span></li>
-    </ul>
-    <p>因此和学院合作，不是请老师给一个成品写序。教学层、易错词、课程词表，本来就应该由对外汉语的课堂来长。</p>
-
-    <h2>建议先做的四件事</h2>
-    <ol class="ask">
-      <li>用一小时看样品。请当场试 <span class="try">安全</span>、<span class="try">abbd</span>、<bdi class="try" lang="ar" dir="rtl">س ل م</bdi>，再点开「安全带」和底部的发音页，看一个词怎样走到另一个词。</li>
-      <li>请两位教师看三块数据是否值得进课堂：拼音误读说明、量词和离合词、翻译陷阱。看的是数据能不能用，不是界面好不好看。</li>
-      <li>一个阿拉伯学生小班试用两周。只记三件事：从汉字、拼音、阿语三种起点能不能查到；词族和搭配会不会接着点；陷阱有没有用。</li>
-      <li>若试用成立，学院负责教学层的第一批词（建议先做一个年级或一门课），我们负责把这层挂进同一本词典，并署学院和老师的名字。</li>
+  <section class="summary">
+    <h3>摘要</h3>
+    <ol>
+      <li><b>市场上已经有中阿词典 App，</b>如智慧宫 WPT 和麦阿尼中阿词典。它们收词多，并且带翻译功能。我们不在收词数量上和它们竞争。</li>
+      <li><b>我们做的是数据的组织方式。</b>每个中文义项对应几个阿语译法，并分别标出语域、介词搭配和词根。每一条都带来源和审定状态，可以单独更新。条与条之间可以互相跳转：字带出词族，词带出搭配，搭配带出辨析，阿语词根也能反查回中文。这三件事决定了一部词典能否被译者信任、被教师用于教学。</li>
+      <li><b>查询要从阿语母语者的实际起点出发。</b>样品已经支持八种键入方式，另有手写、拍照和点词续查，用户不需要先切换语言或模式。</li>
+      <li><b>以后可以往上叠加内容。</b>新的专业领域、教学层、课程词表、阅读器和复习功能，都挂在同一套词条上，不必另起炉灶。</li>
+      <li><b>希望学院参与的是教学层和审定，</b>不是事后作序。第一步很小：一次演示、两位教师评审、一个小班试用两周。</li>
     </ol>
-    <p>这一步不谈投资，也不谈独家。样品词条少，是有意先把数据的形状做对。词库要和学院一起长，而不是先堆满再请人背书。</p>
+  </section>
 
-    <p class="note">本页图片截自 2026 年 10 月的网页样品。样品中的阿语释义和例句未经审校，不能当作教材或正式译文。竞品比较依据的是这些产品公开的对象和功能，不是使用人数。</p>
-  </article>
+  <!-- 一 -->
+  <h2><span class="no">一</span>阿拉伯学生查中文，难在哪里</h2>
+  <p>沙特、阿联酋等国已经把中文纳入国民教育，来华的阿拉伯留学生、译者和外交、商务人员也在增加。他们查中文时遇到的困难，和英语母语者不完全一样：</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>处境</th><th>具体表现</th><th>对词典的要求</th></tr></thead>
+    <tbody>
+      <tr><th>见字不会读</th><td>看到汉字打不出拼音，只能截图去问别人</td><td>手写、拍照必须是主要入口，不是附加功能</td></tr>
+      <tr><th>用阿语字母套读拼音</th><td>q 读成 <bdi lang="ar">ق</bdi>，h 读成 <bdi lang="ar">ه</bdi>，声调完全陌生</td><td>拼音说明要用阿语写，指出具体误读</td></tr>
+      <tr><th>要的是阿语译法</th><td>中文释义看不懂；一个中文词只给一个阿语词，往往选错</td><td>同一义项给多个阿语译法，标出语域、介词搭配、词根</td></tr>
+      <tr><th>中阿概念不对称</th><td>粮食安全 ≠ 食品安全；矮、低、短在阿语里难以分辨</td><td>专门的辨析与「翻译陷阱」</td></tr>
+      <tr><th>汉语语法难点</th><td>量词、离合词（「安了家」）、补语</td><td>每个名词给量词，离合词给可拆开的说法</td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- 二 -->
+  <h2><span class="no">二</span>竞品：现有产品各自做到了什么</h2>
+  <p>院长提出的竞品问题很关键。下表依据各产品在应用商店和官网上的公开介绍整理，收词数字均为厂商自述。</p>
+  <div class="table-wrap"><table class="wide">
+    <thead><tr><th>产品</th><th>主要用户</th><th>公开介绍里的强项</th><th>对阿语母语者仍然缺的</th></tr></thead>
+    <tbody>
+      <tr><th>智慧宫 WPT<br><span class="meta">宁夏赛洛丝</span></th><td>中阿双向学习者、从业者</td><td>称汇集国内外主流中阿词典，约 40–60 万词条；在线翻译、语音、拍照翻译、人工翻译；有「学中文」模式、HSK 词表、汉字书写练习；中、阿、英三种界面</td><td>以汇集和翻译为主。公开介绍没有说明义项级的阿语译法区分、每条的来源与审定状态，也没有说明专业词按领域分包更新</td></tr>
+      <tr><th>麦阿尼中阿词典<br><span class="meta">西安新月</span></th><td>明确面向学中文的阿拉伯人</td><td>称约 35 万条阿语数据；中、阿、英三语 OCR；中文发音与汉字学习；收录阿语单语词典内容</td><td>强项在阿语一侧，例如词根、时态和阿语单语释义。中文一侧的量词、离合词、易混词，以及中阿对译陷阱，公开介绍中较少提及</td></tr>
+      <tr><th>纸质《汉语阿拉伯语词典》<br><span class="meta">商务 1989；北大社 2014 修订</span></th><td>以中国的阿语学习者和译者为主</td><td>北京大学编，单字六千余，词条与词化短语十万余，义项与译法权威</td><td>无法检索，按拼音翻页；更新要等整本再版，修订版距今已十二年；没有发音，也不能点击跳转</td></tr>
+      <tr><th>Pleco 等中英词典</th><td>英语母语者</td><td>检索、手写、拍照、阅读器、复习，是功能上的标杆</td><td>没有阿语。官方说明暂无扩展到其他语言版本的计划，阿拉伯学生只能借英语转一道</td></tr>
+      <tr><th>机器翻译、对话模型</th><td>所有人</td><td>整句即时翻译</td><td>不是词典：同一个词两次结果可能不同，不能指定「从今天起采用审定译法」，也没有词与词的结构</td></tr>
+      <tr class="ours"><th>本项目</th><td>阿语母语的学习者、译者、外交和商务人员</td><td>义项级多译法与标注；逐条可审定、可更新；词与词的关系网络；面向阿语母语者的中文难点数据；与学院共建的教学层</td><td>收词量起步小，需要分阶段扩充；识别类功能要换成商用引擎（见第五节）</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><b>结论：</b>收词量和翻译功能，现有产品已经做得很多，我们不在这方面硬拼。缺的是另一种数据：<b>经过审定、按义项组织、能持续更新、能互相跳转</b>的中阿词汇数据。这正好是需要学科力量参与的部分，也是对外汉语学院能发挥作用、并且难以被复制的部分。正式见面前，建议我们用附录二的测试词，把 WPT、麦阿尼和纸质词典逐条对比一遍，用实际结果说话。</div>
+
+  <!-- 三 -->
+  <h2><span class="no">三</span>核心价值：数据本身</h2>
+  <p>界面一年内就能被别人仿出来，成体系、经过审定的数据仿不出来。下面分四个方面说明：丰富、实时、词与词的拓展性，以及可信。</p>
+
+  <h3>3.1 丰富：一个词条有多层信息</h3>
+  <p>常见的对译词典，一个词往往只给一行译文。我们的数据结构把一个词拆成十几个可以单独使用的层次，每一层都服务一个具体的使用场景。</p>
+  <div class="diagram">
+    <div class="compare">
+      <div class="plain">
+        <div class="label meta">常见的对译</div>
+        <div class="line">安全</div>
+        <div><bdi lang="ar">أمن؛ سلامة</bdi></div>
+        <p class="meta" style="margin-top:10px">用户无从判断「粮食安全」该用哪个，也不知道「安全带」「安理会」和它有关。</p>
+      </div>
+      <div class="layers">
+        <div class="layer"><b>读音</b><span>ānquán，声调用颜色区分；发音；逐字笔顺</span></div>
+        <div class="layer"><b>义项 ①</b><span>形容词「没有危险」：<bdi lang="ar">آمِن</bdi> 和 <bdi lang="ar">سالِم</bdi>，各注词根，并说明「平安到达」用后者</span></div>
+        <div class="layer"><b>义项 ②</b><span>名词「安全状态」：<bdi lang="ar">أَمْن</bdi> 用于国家和网络安全，<bdi lang="ar">سَلامَة</bdi> 用于生产和食品安全，<bdi lang="ar">أَمان</bdi> 用于「安全感」</span></div>
+        <div class="layer"><b>搭配</b><span>国家安全、粮食安全、食品安全、网络安全……每条都能单独检索</span></div>
+        <div class="layer"><b>例句</b><span>按义项分开，标出「正式 / 外交 / 口语」，每个词都可以点开</span></div>
+        <div class="layer"><b>词族</b><span>安全带、安全帽、安全感、安全阀、安全系数、安全理事会</span></div>
+        <div class="layer trap"><b>翻译陷阱</b><span>粮食安全 = <bdi lang="ar">الأمن الغذائي</bdi>（有没有粮食）；食品安全 = <bdi lang="ar">سلامة الأغذية</bdi>（干不干净）</span></div>
+        <div class="layer pack"><b>专业包追加</b><span>外交包追加义项 ③「共同、综合、合作、可持续的安全观」，附官方阿语表述</span></div>
+        <div class="layer"><b>语法</b><span>（其他词）量词「一项安排」；离合词「安了家」；介词搭配，如「暗示」对应 <bdi lang="ar">ألمح إلى</bdi></span></div>
+        <div class="layer"><b>文化</b><span>（其他词）「安拉」与「真主」在中国穆斯林中的用法差别</span></div>
+        <div class="layer"><b>来源 · 审定</b><span>每个义项、每条例句都记录来源和审定人，未审定的内容会被标出</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="figs">
+    <figure>
+      <img src="img/entry.jpg" alt="安全词条：一个义项下的多个阿语译法" style="object-position:center 68%">
+      <figcaption><strong>图 1　一个义项，几个阿语译法。</strong>每个译法旁边都标有词根，点击即可按词根继续查。</figcaption>
+    </figure>
+    <figure>
+      <img src="img/trap.jpg" alt="安全词条的翻译陷阱" style="object-position:center 80%">
+      <figcaption><strong>图 2　翻译陷阱是数据中单独的一层。</strong>「粮食安全」和「食品安全」的阿语说法不同，这是阿拉伯译者最常犯的错误之一。</figcaption>
+    </figure>
+  </div>
+
+  <h3>3.2 实时：按词条更新，不等再版</h3>
+  <p>纸质词典的内容停在出版那一年。修订版出版至今已经十二年，「大模型」「光伏」「一带一路」的官方阿语译法都不在书里。我们的数据以词条为单位独立更新，并分三种节奏：</p>
+  <div class="diagram">
+    <div class="flow">
+      <div class="step"><b>新词与译法</b>新闻、外交文件、行业术语表、教师反馈</div><span class="arrow">→</span>
+      <div class="step"><b>起草</b>AI 生成例句和候选译法，标为「未审」</div><span class="arrow">→</span>
+      <div class="step"><b>审定</b>教师和译者逐条核对，并留下审定人姓名</div><span class="arrow">→</span>
+      <div class="step"><b>发布</b>只发布已审定的内容；用户端增量更新</div><span class="arrow">→</span>
+      <div class="step"><b>回流</b>用户纠错和查询记录返回，进入下一轮修订</div>
+    </div>
+    <div class="speeds">
+      <div class="speed"><span class="t">按天</span><b>单条修订</b>改一个译法，补一条例句。已审定的旁边内容不受影响。</div>
+      <div class="speed"><span class="t">按月</span><b>专业包</b>外交、人工智能、伊斯兰金融、能源各自成包，可以单独开关和更新。</div>
+      <div class="speed"><span class="t">按年</span><b>主词库版本</b>常用词整体复核，配合学年和教材更新。</div>
+    </div>
+  </div>
+  <p>这里说的「实时」，指的是词库一直在维护：课堂上刚确定的译法，下一次推送后学生就能查到。追加内容只增加、不覆盖。例如外交包给「安全」新增一个义项，原有的两个义项和审定记录保持不变。</p>
+  <div class="figs">
+    <figure>
+      <img src="img/pack.jpg" alt="外交专业包给安全追加的第三个义项" style="object-position:center 72%">
+      <figcaption><strong>图 3　专业包追加的义项。</strong>外交包给「安全」追加了第三个义项和官方阿语表述，并带出「全球安全倡议」。绿色边线和标签表示内容来自扩展包。</figcaption>
+    </figure>
+    <figure>
+      <img src="img/packs.jpg" alt="四个专业扩展包的开关" class="auto">
+      <figcaption><strong>图 4　主词库常驻，四个专业包可以单独开关。</strong>以后增加医学、法律、新闻等领域，也是同样的方式。</figcaption>
+    </figure>
+  </div>
+
+  <h3>3.3 词与词的拓展性：一个词连着一张网</h3>
+  <p>学生查完一个词，应该能顺着关系继续查下一个，而不是查完就结束。译者真正翻译的单位往往不是单词，而是搭配。我们把纸质词典里只能看、不能点的「◊ 词族」「参见」，以及隐含的搭配和对译关系，都变成可以点击和检索的连接。</p>
+  <div class="diagram">
+    <svg viewBox="0 0 860 400" width="100%" role="img" aria-label="以安全为中心的词汇关系网">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#8a8f96"/></marker>
+      </defs>
+      <g stroke-width="1.6" fill="none">
+        <line x1="430" y1="200" x2="300" y2="70" stroke="#1f3a5f"/>
+        <line x1="430" y1="200" x2="400" y2="60" stroke="#1f3a5f"/>
+        <line x1="430" y1="200" x2="540" y2="62" stroke="#c08a3e"/>
+        <line x1="430" y1="200" x2="650" y2="90" stroke="#c08a3e"/>
+        <line x1="430" y1="200" x2="700" y2="160" stroke="#c08a3e"/>
+        <line x1="430" y1="200" x2="160" y2="160" stroke="#6b7f3a"/>
+        <line x1="430" y1="200" x2="150" y2="250" stroke="#6b7f3a"/>
+        <line x1="430" y1="200" x2="230" y2="330" stroke="#6b7f3a"/>
+        <line x1="430" y1="200" x2="690" y2="290" stroke="#3f7a4a" stroke-dasharray="6 4"/>
+        <line x1="430" y1="200" x2="520" y2="345" stroke="#7a4f9a"/>
+        <line x1="430" y1="200" x2="380" y2="350" stroke="#7a4f9a"/>
+        <line x1="520" y1="345" x2="690" y2="345" stroke="#7a4f9a"/>
+        <path d="M150 250 Q 120 300 230 330" stroke="#8c3a2a" stroke-dasharray="3 4"/>
+      </g>
+      <g font-size="15" text-anchor="middle">
+        <rect x="378" y="176" width="104" height="48" rx="8" fill="#1f3a5f"/><text x="430" y="207" fill="#fff" font-size="20">安全</text>
+        <rect x="275" y="48" width="50" height="34" rx="6" fill="#e6ecf4"/><text x="300" y="71">安</text>
+        <rect x="375" y="40" width="50" height="34" rx="6" fill="#e6ecf4"/><text x="400" y="63">全</text>
+        <rect x="500" y="45" width="80" height="34" rx="6" fill="#f6ecd9"/><text x="540" y="68">安全带</text>
+        <rect x="610" y="73" width="80" height="34" rx="6" fill="#f6ecd9"/><text x="650" y="96">安全感</text>
+        <rect x="644" y="143" width="112" height="34" rx="6" fill="#f6ecd9"/><text x="700" y="166">安全理事会</text>
+        <rect x="104" y="143" width="112" height="34" rx="6" fill="#eef0e2"/><text x="160" y="166">国家安全</text>
+        <rect x="94" y="233" width="112" height="34" rx="6" fill="#eef0e2"/><text x="150" y="256">粮食安全</text>
+        <rect x="174" y="313" width="112" height="34" rx="6" fill="#eef0e2"/><text x="230" y="336">食品安全</text>
+        <rect x="620" y="273" width="140" height="34" rx="6" fill="#e3efe5"/><text x="690" y="296">全球安全倡议</text>
+        <rect x="470" y="328" width="100" height="34" rx="6" fill="#efe6f5"/><text x="520" y="351" font-family="Geeza Pro, Noto Naskh Arabic, serif">أمن</text>
+        <rect x="330" y="333" width="100" height="34" rx="6" fill="#efe6f5"/><text x="380" y="356" font-family="Geeza Pro, Noto Naskh Arabic, serif">سلامة</text>
+        <rect x="640" y="328" width="100" height="34" rx="6" fill="#efe6f5"/><text x="690" y="351">安理会</text>
+      </g>
+      <g font-size="12" fill="#5c6570" text-anchor="middle">
+        <text x="235" y="110">组成字 · 笔顺</text>
+        <text x="600" y="128">◊ 词族</text>
+        <text x="250" y="190">搭配</text>
+        <text x="96" y="300" fill="#8c3a2a">陷阱：两者不能互换</text>
+        <text x="575" y="224" fill="#3f7a4a">外交包追加</text>
+        <text x="605" y="384" fill="#7a4f9a">同一词根反查</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <span><i style="border-color:#1f3a5f"></i>字与词</span>
+      <span><i style="border-color:#c08a3e"></i>词族（原书 ◊ 后的派生词，已升为独立词条）</span>
+      <span><i style="border-color:#6b7f3a"></i>搭配（可单独检索）</span>
+      <span><i style="border-color:#8c3a2a;border-top-style:dotted"></i>辨析 / 翻译陷阱</span>
+      <span><i style="border-color:#3f7a4a;border-top-style:dashed"></i>专业包追加</span>
+      <span><i style="border-color:#7a4f9a"></i>阿语译法与词根</span>
+    </div>
+  </div>
+  <p>同一张网也可以从阿语进入。在样品里输入 <bdi lang="ar">أمن</bdi>，一次会找到九条结果：主词「安全」、外交包里的「安理会」、派生词「安全理事会」，以及「国家安全」「粮食安全」「网络安全」「全球安全倡议」等搭配。阿语母语者心里先有阿语概念，再去找中文说法，这条反向路径对他们尤其重要。</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>关系</th><th>样品中的例子</th><th>对学生和译者的用处</th></tr></thead>
+    <tbody>
+      <tr><th>字 → 词</th><td>安 → 安全、安排、安家、安静</td><td>按字头成批记词，适合词汇课</td></tr>
+      <tr><th>词族</th><td>安全 → 安全带、安全阀、安全系数</td><td>原书 ◊ 后的派生词升为独立词条，可以直接搜到</td></tr>
+      <tr><th>搭配</th><td>粮食安全、食品安全、安理会决议</td><td>翻译的实际单位，每条附阿语译法</td></tr>
+      <tr><th>辨析</th><td>矮 / 低 / 短；粮食安全 / 食品安全</td><td>直接可用于纠错教学</td></tr>
+      <tr><th>阿语反查</th><td>单词 <bdi lang="ar">أمن</bdi>；短语 <bdi lang="ar">الأمن الغذائي</bdi>；词根 <bdi lang="ar">س ل م</bdi></td><td>从阿语概念找到中文说法</td></tr>
+      <tr><th>参见</th><td>安拉 ↔ 真主</td><td>同义词和文化差异放在一起看</td></tr>
+      <tr><th>例句点词</th><td>「请系好安全带」中每个词都可点</td><td>读一句话就能查一串词</td></tr>
+    </tbody>
+  </table></div>
+  <div class="figs">
+    <figure>
+      <img src="img/family.jpg" alt="安全的组成字和词族">
+      <figcaption><strong>图 5　组成字和词族。</strong>点「安」「全」看单字和笔顺，点任一派生词进入它自己的词条。</figcaption>
+    </figure>
+    <figure>
+      <img src="img/arsearch.jpg" alt="输入阿语 أمن 的检索结果">
+      <figcaption><strong>图 6　从阿语进入。</strong>输入 <bdi lang="ar">أمن</bdi>，主词、扩展包词条、派生词和搭配都会出现，并标明各自的类型。</figcaption>
+    </figure>
+  </div>
+
+  <h3>3.4 可信：每一条都能追溯</h3>
+  <p>数据能否被教师和译者采用，取决于是否可信。我们为每个义项、每个译法、每条例句记录来源（原书参照、公开词表、AI 起草、编辑撰写、用户反馈）和审定状态。正式版只发布审定通过的内容；样品中的 AI 内容都标为「未审」。</p>
+  <p>版权方面：纸质词典只用作选词和查漏的参照，不复制其中的阿语释义和例句。例句全部重新生成，再经人工审定。我们同时准备与出版方洽谈授权。1989 年商务版和 2014 年北大社修订版都可以作为洽谈对象。</p>
+  <div class="callout">这里正是学院的位置。数据的价值最终来自<b>谁审定过它</b>。一条经过对外汉语教师审定的译法、辨析或例句，比一百条未经审定的内容更有用。</div>
+
+  <!-- 四 -->
+  <h2><span class="no">四</span>查询的便利性：从用户手里的线索出发</h2>
+  <p>阿语母语者开始查词时，手里的线索各不相同。搜索框会自动判断输入的是汉字、拼音还是阿语，用户不需要切换。下表按「手里有什么」整理，每一种都可以在样品里试。</p>
+  <div class="table-wrap"><table class="wide">
+    <thead><tr><th>手里有什么</th><th>怎么查</th><th>在样品里输入</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><th rowspan="3">看到汉字，不会读</th><td>手写</td><td>手写面板，逐字写</td><td>写一个字点一个候选，可以连写成词</td></tr>
+      <tr><td>拍照 / 相册</td><td>相机按钮</td><td>识别出一行字，点选需要的字再查</td></tr>
+      <tr><td>粘贴</td><td>粘贴按钮</td><td>从微信、网页复制过来的字直接查</td></tr>
+      <tr><th>看到汉字，会打</th><td>汉字（简体和繁体）</td><td><span class="try">安全</span></td><td>完全一致的排在前面，其次是以它开头的和包含它的</td></tr>
+      <tr><th rowspan="4">听到读音</th><td>拼音，不带声调</td><td><span class="try">anquan</span></td><td>空格、隔音符号可省；ü 可写成 v 或 u</td></tr>
+      <tr><td>拼音首字母</td><td><span class="try">abbd</span></td><td>找到「按兵不动」，适合成语和长词</td></tr>
+      <tr><td>声调符号或数字声调</td><td><span class="try">ānquán</span>　<span class="try">an1quan2</span></td><td>区分同音不同调的词</td></tr>
+      <tr><td>通配符</td><td><span class="try">an*</span>　<span class="try">安*</span></td><td>只记得开头时使用</td></tr>
+      <tr><th rowspan="3">心里有阿语词</th><td>阿语单词</td><td><bdi lang="ar">سلامة</bdi></td><td>带不带元音符号都行；<bdi lang="ar">ة/ه</bdi>、<bdi lang="ar">أ/إ/ا</bdi>、<bdi lang="ar">ى/ي</bdi>、波斯键盘字母自动统一；冠词和介词前缀自动去掉</td></tr>
+      <tr><td>阿语短语</td><td><bdi lang="ar">الأمن الغذائي</bdi></td><td>直接找到搭配「粮食安全」</td></tr>
+      <tr><td>阿语词根</td><td><bdi lang="ar">س ل م</bdi>　或　<bdi lang="ar">جذر:سلم</bdi></td><td>按词根找出所有相关中文词，这是阿语使用者熟悉的查法</td></tr>
+      <tr><th>正在读一段中文</th><td>点词续查</td><td>点例句中的任意词</td><td>底部弹出简明释义，可以一路点下去</td></tr>
+    </tbody>
+  </table></div>
+  <p>查到以后，词条页还提供：声调颜色、发音、逐字笔顺动画、按项目分组的术语夹（可导出表格和 Anki 卡片），以及本机查询历史。拼音指南用阿语写成，直接指出「q 不读 <bdi lang="ar">ق</bdi>、h 不读 <bdi lang="ar">ه</bdi>」这类误读，中英词典不会提供这种说明。</p>
+  <div class="figs three">
+    <figure>
+      <img src="img/abbd.jpg" alt="输入 abbd 找到按兵不动" class="auto">
+      <figcaption><strong>图 7　首字母查成语。</strong>输入 <code>abbd</code> 找到「按兵不动」，结果下方标明是按首字母命中的。</figcaption>
+    </figure>
+    <figure>
+      <img src="img/hand.jpg" alt="手写查字" style="object-position:center 62%">
+      <figcaption><strong>图 8　手写。</strong>写一个字点一个候选，可以连成词再查。</figcaption>
+    </figure>
+    <figure>
+      <img src="img/pinyin.jpg" alt="用阿语写的拼音指南">
+      <figcaption><strong>图 9　用阿语写的拼音指南。</strong>声母表单列一栏「注意」，写明阿语母语者的常见误读。</figcaption>
+    </figure>
+  </div>
+  <p class="meta">样品中的手写和拍照用的是免费开源组件，准确率只够演示。正式版计划改用手机端离线识别引擎，例如 Google ML Kit 的手写与文字识别，免费、离线可用；同时加入从任意 App 选中文字查词的入口。查询方式本身不变。</p>
+
+  <!-- 五 -->
+  <h2><span class="no">五</span>未来的拓展性：在同一套词条上继续叠加</h2>
+  <p>数据结构先定好，以后的内容和功能都挂在同一套词条上，不推倒已有内容。可以拓展的方向有四条：</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>方向</th><th>内容</th><th>学院可以参与的部分</th></tr></thead>
+    <tbody>
+      <tr><th>内容</th><td>更多专业包：医学、法律、新闻、工程、旅游、清真产业；海湾、马格里布等地区的阿语用法标注</td><td>与相关专业合作出专题词表</td></tr>
+      <tr><th>教学</th><td>HSK 等级、课程词表、易错说明作为一层挂在词条上；教师可以给班级推送词表</td><td><b>由学院维护这一层并署名</b>，主译法仍走审定流程</td></tr>
+      <tr><th>产品</th><td>整段文章点查的阅读器；术语夹生成复习卡片；教师端和班级；网页版和手机端共用一套数据</td><td>提出课堂需求，参与试用</td></tr>
+      <tr><th>研究</th><td>匿名统计阿拉伯学习者「查不到」「查错」「反复查」的词，得到真实的学习难点数据</td><td>可以支持论文、教材编写和课题申报</td></tr>
+    </tbody>
+  </table></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>阶段</th><th>目标</th><th>完成标志</th></tr></thead>
+    <tbody>
+      <tr><th>现在</th><td>网页样品：数据结构、八种检索、手写拍照、四个专业包</td><td>可以当场演示，约四十个词条</td></tr>
+      <tr><th>第一阶段</th><td>首批常用词（建议以 HSK 一至四级相关词为主）完成审定；建立审定后台</td><td>一个年级可以用它上课</td></tr>
+      <tr><th>第二阶段</th><td>手机 App，离线可用；商用识别引擎；阅读器和复习功能</td><td>上架，小范围对外试用</td></tr>
+      <tr><th>第三阶段</th><td>扩充到数万条；更多专业包；教师端和班级功能</td><td>可以对阿拉伯国家的院校和机构推广</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">各阶段所需时间，取决于审定人力，建议在试用之后与学院一起确定。</p>
+
+  <!-- 六 -->
+  <h2><span class="no">六</span>合作方式</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th></th><th>学院</th><th>我们</th></tr></thead>
+    <tbody>
+      <tr><th>内容</th><td>教学层：课程词表、易错说明、例句审定</td><td>数据结构、AI 起草、编辑流程、版权路径</td></tr>
+      <tr><th>技术</th><td>提出课堂需求</td><td>网页和 App 开发、检索、识别、更新发布</td></tr>
+      <tr><th>使用</th><td>组织阿拉伯学生试用并反馈</td><td>根据反馈迭代，提供匿名的使用统计</td></tr>
+      <tr><th>署名</th><td>审定内容署学院和教师姓名</td><td>产品中明确标注合作单位</td></tr>
+    </tbody>
+  </table></div>
+  <p>对学院来说，可以得到一个能直接用于阿拉伯学生教学的工具，一份关于阿拉伯学习者难点的研究数据，学生参与审定的翻译实践机会，以及可以申报的合作课题。第一步只需要投入很少的时间：</p>
+  <ol class="steps">
+    <li><b>一小时演示。</b>请院长和老师在手机上试：<span class="try">安全</span>、<span class="try">abbd</span>、<bdi lang="ar">س ل م</bdi>、<bdi lang="ar">أمن</bdi>，再点开「安全带」和底部的「النطق」（发音指南）。</li>
+    <li><b>两位教师评审三块数据。</b>拼音误读说明、量词和离合词、翻译陷阱，判断它们是否值得进入课堂。</li>
+    <li><b>一个阿拉伯学生小班试用两周。</b>只观察三点：从汉字、拼音、阿语三种起点能不能查到；会不会顺着词族和搭配继续查；陷阱提示是否有用。</li>
+    <li><b>如果试用效果成立，</b>学院选定一个年级或一门课，作为第一批教学层词汇；我们负责把它接入词典，并署学院和教师的名字。</li>
+  </ol>
+  <p>这一步不涉及投资，也不涉及独家条款。</p>
+
+  <!-- 附录 -->
+  <h2><span class="no">附一</span>样品现状</h2>
+  <p>为了诚实地说明现状：样品目前约有四十个词条，用来验证数据结构、检索方式和更新机制，不是成品词库。其中的阿语释义和例句由 AI 起草，<b>尚未经人工审校</b>，不能作为教材或正式译文使用。宗教相关词条在正式版中会单独送审。</p>
+
+  <h2><span class="no">附二</span>建议的竞品对比测试词</h2>
+  <p>建议用下面十组词，在智慧宫 WPT、麦阿尼、纸质词典和本样品中逐一查询，比较能否查到、译法是否准确、有没有辨析和搭配。</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>测试词</th><th>看什么</th></tr></thead>
+    <tbody>
+      <tr><th>粮食安全 / 食品安全</th><td>两个阿语译法是否区分清楚</td></tr>
+      <tr><th>安家</th><td>是否说明离合用法「安了家」</td></tr>
+      <tr><th>矮 / 低 / 短</th><td>有没有辨析</td></tr>
+      <tr><th>暗示</th><td>阿语动词是否注明介词 <bdi lang="ar">إلى</bdi></td></tr>
+      <tr><th>一带一路</th><td>是否采用官方阿语译名</td></tr>
+      <tr><th>人类命运共同体</th><td>外交表述是否规范</td></tr>
+      <tr><th>大模型 / 光伏</th><td>新词是否收录</td></tr>
+      <tr><th>伊斯兰债券</th><td>专业术语是否准确</td></tr>
+      <tr><th>安拉 / 真主</th><td>有没有文化说明</td></tr>
+      <tr><th>输入 <bdi lang="ar">سلامه</bdi>（ة 写成 ه）</th><td>阿语拼写不规范时能否查到</td></tr>
+    </tbody>
+  </table></div>
+
+  <p class="note">竞品信息来自 2026 年 10 月各产品在 App Store、Google Play 和官网上的公开介绍，收词数为厂商自述，未经我们验证，以实际测试为准。纸质词典信息来自出版方和北京大学公开资料。截图来自本项目网页样品。</p>
+</article>
 </body>
 </html>
