@@ -46,6 +46,19 @@
 
     <div id="sheet" class="sheet"><div class="sheet-card"><button class="icon close" data-action="close-sheet">✕</button><div id="sheet-body"></div></div></div>
 
+    <div id="hw" class="modal"><div class="modal-card hw-card">
+      <div class="modal-head"><div>الكتابة باليد</div><button class="icon" data-action="close-hw">✕</button></div>
+      <div id="hw-composed" class="hw-composed zh" dir="ltr" lang="zh-CN"></div>
+      <canvas id="hw-canvas" dir="ltr"></canvas>
+      <div id="hw-cands" class="hw-cands"></div>
+      <div class="row-btns">
+        <button class="btn ghost" data-action="hw-undo">تراجع</button>
+        <button class="btn ghost" data-action="hw-clear">مسح الحرف</button>
+        <button class="btn" data-action="hw-search">ابحث</button>
+      </div>
+      <p class="hint" id="hw-status">ارسم حرفًا، ثم اضغط الاقتراح لإضافته.</p>
+    </div></div>
+
     <div id="stroke" class="modal"><div class="modal-card">
       <div class="modal-head"><div id="stroke-title"></div><button class="icon" data-action="close-stroke">✕</button></div>
       <div id="stroke-box" class="stroke-box" dir="ltr"></div>
@@ -56,6 +69,8 @@
   </div>
 
   <script src="vendor/hanzi-writer.min.js"></script>
+  <script src="vendor/hanzilookup.min.js"></script>
+  <script src="js/handwrite.js"></script>
   <script src="data/core.js"></script>
   <script src="data/packs.js"></script>
   <script src="js/labels.js"></script>

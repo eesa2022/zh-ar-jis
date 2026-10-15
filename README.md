@@ -8,3 +8,4 @@
 
 - `vendor/hanzi-writer.min.js`：[hanzi-writer](https://github.com/chanind/hanzi-writer)，MIT。
 - `vendor/strokes/`：笔顺数据来自 [hanzi-writer-data](https://github.com/chanind/hanzi-writer-data)，上游为 [Make Me a Hanzi](https://github.com/skishore/makemeahanzi)（Arphic Public License）。
+- `vendor/hanzilookup.min.js`：[HanziLookupJS](https://github.com/gugray/HanziLookupJS)，GNU GPL。`vendor/mmah.json` 来自同一项目，数据源自 Make Me a Hanzi（Arphic Public License）。

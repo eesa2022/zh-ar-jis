@@ -424,6 +424,7 @@
     if (d.look) { const e = LEX.get(d.look); e ? openEntry(e.id) : openSheet(d.look); return; }
     if (d.say) { speak(d.say); return; }
     if (d.char) { openStroke(d.char); return; }
+    if (d.hwChar) { HW.pick(d.hwChar); return; }
     if (d.copy) { try { await navigator.clipboard.writeText(d.copy); toast("نُسخ: " + d.copy); } catch { toast(d.copy); } return; }
     if (d.project) { state.vault.current = d.project; save("zhar.vault", state.vault); render(); return; }
     switch (d.action) {
@@ -438,12 +439,14 @@
       case "tips": openSearchTips(); break;
       case "intro-done": state.settings.introDone = true; save("zhar.settings", state.settings); render(); break;
       case "clear-history": state.history = []; save("zhar.history", []); render(); break;
-      case "handwrite":
+      case "handwrite": HW.open(); break;
+      case "close-hw": HW.close(); break;
+      case "hw-undo": HW.undo(); break;
+      case "hw-clear": HW.clearStroke(); break;
+      case "hw-search": HW.search(); break;
       case "camera":
-        $("#sheet-body").innerHTML = `<h3 class="sheet-title">${d.action === "handwrite" ? "✍ الكتابة باليد" : "📷 البحث بالكاميرا"}</h3>
-          <p>${d.action === "handwrite"
-            ? "ارسم الحرف بإصبعك فتظهر الحروف المقترحة فورًا، حتى لو لم تعرف نطقه. هذه الخاصية مخططة للتطبيق (التعرّف يتم على الجهاز دون إنترنت)."
-            : "وجّه الكاميرا إلى نص صيني أو اختر صورة، ثم اضغط على أي كلمة لمعرفة معناها. هذه الخاصية مخططة للإصدار الثاني."}</p>
+        $("#sheet-body").innerHTML = `<h3 class="sheet-title">📷 البحث بالكاميرا</h3>
+          <p>وجّه الكاميرا إلى نص صيني أو اختر صورة، ثم اضغط على أي كلمة لمعرفة معناها. هذه الخاصية مخططة للإصدار الثاني.</p>
           <p class="hint">غير متوفرة في هذا النموذج التجريبي على الويب.</p>`;
         $("#sheet").classList.add("open");
         break;
@@ -481,6 +484,7 @@
   setInterval(() => { if (!$("#q").value) $("#q").placeholder = HINTS[(hintI = (hintI + 1) % HINTS.length)]; }, 2600);
   $("#q").placeholder = HINTS[0];
 
+  HW.onSearch = (text) => { if (text) setQuery(text); else toast("اكتب حرفًا أولًا"); };
   rebuild(); render();
   window.__app = { state, LEX };
 })();
